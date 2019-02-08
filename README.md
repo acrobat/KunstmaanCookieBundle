@@ -14,10 +14,11 @@ All provide the ability to accept or decline certain cookies.
 | [@sandergo90](https://github.com/sandergo90) | ![sandergo90](https://github.com/sandergo90.png?size=100)
 | [@diskwriter](https://github.com/diskwriter) | ![diskwriter](https://github.com/diskwriter.png?size=100)
 | [@indrikenens](https://github.com/indrikenens) | ![indrikenens](https://github.com/indrikenens.png?size=100)
-| [@FVKVN](https://github.com/FVKVN) | ![treeleaf](https://github.com/FVKVN.png?size=100)
-| [@dbeerten](https://github.com/dbeerten) | ![indrikenens](https://github.com/dbeerten.png?size=100)
+| [@FVKVN](https://github.com/FVKVN) | ![FVKVN](https://github.com/FVKVN.png?size=100)
+| [@dbeerten](https://github.com/dbeerten) | ![dbeerten](https://github.com/dbeerten.png?size=100)
 | [@treeleaf](https://github.com/treeleaf) | ![treeleaf](https://github.com/treeleaf.png?size=100)
-| [@KMBenjaminSchodts](https://github.com/KMBenjaminSchodts) | ![treeleaf](https://github.com/KMBenjaminSchodts.png?size=100)
+| [@KMBenjaminSchodts](https://github.com/KMBenjaminSchodts) | ![KMBenjaminSchodts](https://github.com/KMBenjaminSchodts.png?size=100)
+| [@sector32](https://github.com/sector32) | ![treeleaf](https://github.com/sector32.png?size=100)
 
 # Enabling the bundle
 
