@@ -22,7 +22,7 @@
     transform: translateX(-100%);
 
     background: $kmcc_primary-color;
-    background-image: url(/frontend/img/legal/svg/arrow--up.svg);
+    background-image: url($arrow-up-image);
     background-repeat: no-repeat;
     background-position: 50% 50%;
 
