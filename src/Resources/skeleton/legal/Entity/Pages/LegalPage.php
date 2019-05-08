@@ -67,6 +67,6 @@ class LegalPage extends AbstractPage implements HasPageTemplateInterface, SlugAc
      */
     public function getControllerAction()
     {
-        return LegalController::class.'::legalPage';
+        {% if not isV4 %}return 'KunstmaanCookieBundle:Legal:legalPage';{% else %}return LegalController::class.'::legalPage';{%endif%}
     }
 }
