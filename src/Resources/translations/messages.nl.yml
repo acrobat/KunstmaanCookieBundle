@@ -1,5 +1,33 @@
 kuma:
   cookie:
+      menu:
+          cookies: Cookies
+          cookie: Cookie lijst
+          cookie_types: Cookie types
+
+      adminlists:
+          cookie_type:
+              name: Naam
+              short_description: Korte beschrijving
+              long_description: uitgebreide beschrijving
+              internal_name: Interne naam
+              internal_name_with_explanation: Interne naam (gebruikt als cookie naam)
+              always_on: Altijd aan
+
+          cookie:
+              name: Naam
+              type: Type
+              description: Beschrijving
+
+      config:
+          help: "Een komma gescheiden lijst van ip-adressen (wildcards mogelijk). Een datalayer zal worden uitgevoerd als het ip-dres van de bezoeker gelijk is aan een van deze ip's"
+          client_ip: Client ip-adressen
+          internal_ip: Interne ip-adressen
+          enabled: Cookie bundle is geactiveerd
+          version:
+              label: Cookie versie
+              info: Wanneer een nieuwe cookie of cookie type wordt toegevoegd moet deze versie verhoogd worden om de cookie consent terug aan de gebruiker te vragen
+
     bar:
       title: Deze website werkt optimaal met cookies
       cookie_preferences: cookie-voorkeuren
