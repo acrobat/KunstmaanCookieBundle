@@ -25,7 +25,13 @@
         {% for key,tab in tabs %}
             {% if tab is not null %}
                 {% set pageToRender = get_page_by_node_translation(tab.nodeTranslation(app.request.locale, true)) %}
-                {% include 'KunstmaanCookieBundle:Components:TabBarContentPanel.html.twig' with {'key':key, 'tab':tab, 'page': pageToRender, 'bundle':'<%= bundle.name %>'} %}
+                <div id="{{ key }}-panel" class="kmcc-tabs__panel{% if key == node.internalName %} active{% endif %}">
+                    <% if not isV4 %>
+                        {% include '<%= bundle.name %>:Pages:LegalPage/_content.html.twig' with {'page': pageToRender} %}
+                    <% else %>
+                        {% include 'Pages/LegalPage/_content.html.twig' with {'page': pageToRender} %}
+                    <% endif %>
+                </div>
             {% endif %}
         {% endfor %}
     </div>
