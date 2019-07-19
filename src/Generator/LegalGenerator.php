@@ -177,7 +177,7 @@ class LegalGenerator extends KunstmaanGenerator
         if ($this->isSymfony4()) {
             $targetDir = $this->container->getParameter('kernel.project_dir') . '/config/kunstmaancms/pageparts/';
         } else {
-            $targetDir = sprintf('%s/Resources/config/pageparts/', $bundle->getPath());
+            $targetDir = sprintf('%s/Resources/config/pageparts/', $this->bundle->getPath());
         }
 
         $sourceDir = sprintf('%s/Resources/config/pageparts/', $this->skeletonDir);
@@ -199,7 +199,7 @@ class LegalGenerator extends KunstmaanGenerator
         if ($this->isSymfony4()) {
             $targetDir = $this->container->getParameter('kernel.project_dir') . '/config/kunstmaancms/pagetemplates/';
         } else {
-            $targetDir = sprintf('%s/Resources/config/pagetemplates/', $bundle->getPath());
+            $targetDir = sprintf('%s/Resources/config/pagetemplates/', $this->bundle->getPath());
         }
 
         $sourceDir = sprintf('%s/Resources/config/pagetemplates/', $this->skeletonDir);
