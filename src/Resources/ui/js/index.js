@@ -43,7 +43,7 @@ import { COOKIE_MODAL_TRIGGER_IDENTIFIER } from './config/cookieModalTrigger.con
 export const {
     getKmccCookies,
     hasAllowedDataLayers,
-} = cookies.getKmccCookies;
+} = cookies;
 export const asyncDomInitiator = AsyncDomInitiator.init;
 
 // For projects that do not use bundlers on their own.
