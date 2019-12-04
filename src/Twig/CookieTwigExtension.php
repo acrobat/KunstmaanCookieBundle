@@ -64,7 +64,9 @@ class CookieTwigExtension extends \Twig_Extension
      */
     public function getLegalCookie(Request $request)
     {
-        return $this->cookieHelper->getLegalCookie($request)['cookies'];
+        $legalCookie = $this->cookieHelper->getLegalCookie($request);
+
+        return null !== $legalCookie && isset($legalCookie['cookies']) ? $legalCookie['cookies'] : [];
     }
 
     /**
