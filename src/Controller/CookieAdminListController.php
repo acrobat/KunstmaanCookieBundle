@@ -2,6 +2,8 @@
 
 namespace Kunstmaan\CookieBundle\Controller;
 
+use Kunstmaan\AdminBundle\Helper\DomainConfiguration;
+use Kunstmaan\AdminBundle\Helper\DomainConfigurationInterface;
 use Kunstmaan\AdminListBundle\AdminList\Configurator\AdminListConfiguratorInterface;
 use Kunstmaan\AdminListBundle\Controller\AdminListController;
 use Kunstmaan\CookieBundle\AdminList\CookieAdminListConfigurator;
@@ -20,13 +22,21 @@ class CookieAdminListController extends AdminListController
     /** @var AdminListConfiguratorInterface */
     private $configurator;
 
+    /** @var DomainConfigurationInterface */
+    private $domainConfiguration;
+
+    public function __construct(DomainConfigurationInterface $domainConfiguration)
+    {
+        $this->domainConfiguration = $domainConfiguration;
+    }
+
     /**
      * @return AdminListConfiguratorInterface
      */
     public function getAdminListConfigurator()
     {
         if (null === $this->configurator) {
-            $this->configurator = new CookieAdminListConfigurator($this->getEntityManager());
+            $this->configurator = new CookieAdminListConfigurator($this->getEntityManager(), null, $this->domainConfiguration);
         }
 
         return $this->configurator;
