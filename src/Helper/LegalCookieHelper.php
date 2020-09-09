@@ -14,8 +14,8 @@ use Symfony\Component\HttpFoundation\Response;
 class LegalCookieHelper
 {
     const LEGAL_COOKIE_NAME = 'legal_cookie';
-
     const FUNCTIONAL_COOKIE_NAME = 'functional_cookie';
+    const DEFAULT_COOKIE_LIFETIME = 10 * 365 * 24 * 60 * 60; // 10 years
 
     /** @var array */
     private $legalCookie;
@@ -25,6 +25,8 @@ class LegalCookieHelper
 
     /** @var string */
     private $adminFirewallName;
+    /** @var int */
+    private $cookieLifetime;
 
     /**
      * LegalCookieHelper constructor.
@@ -32,10 +34,11 @@ class LegalCookieHelper
      * @param EntityManagerInterface $em
      * @param string                 $adminFirewallName
      */
-    public function __construct(EntityManagerInterface $em, $adminFirewallName)
+    public function __construct(EntityManagerInterface $em, $adminFirewallName, $cookieLifeTime = self::DEFAULT_COOKIE_LIFETIME)
     {
         $this->em = $em;
         $this->adminFirewallName = $adminFirewallName;
+        $this->cookieLifetime = $cookieLifeTime;
     }
 
     /**
@@ -129,7 +132,7 @@ class LegalCookieHelper
         return new Cookie(
             self::LEGAL_COOKIE_NAME,
             json_encode($legalCookie),
-            time() + (10 * 365 * 24 * 60 * 60),
+            time() + ($this->cookieLifetime),
             '/',
             null,
             $request->isSecure(),

@@ -2,6 +2,7 @@
 
 namespace Kunstmaan\CookieBundle\DependencyInjection;
 
+use Kunstmaan\CookieBundle\Helper\LegalCookieHelper;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -25,9 +26,15 @@ class Configuration implements ConfigurationInterface
             $rootNode = $treeBuilder->root('kunstmaan_cookie');
         }
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->arrayNode('consent_cookie')
+                    ->children()
+                        ->integerNode('lifetime')->defaultValue(LegalCookieHelper::DEFAULT_COOKIE_LIFETIME)->info('Default lifetime of 10 years')->end()
+                    ->end
+                ->end
+            ->end()
+        ;
 
         return $treeBuilder;
     }

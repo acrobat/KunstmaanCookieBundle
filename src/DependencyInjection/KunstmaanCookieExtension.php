@@ -2,6 +2,7 @@
 
 namespace Kunstmaan\CookieBundle\DependencyInjection;
 
+use Kunstmaan\CookieBundle\Helper\LegalCookieHelper;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
@@ -24,5 +25,7 @@ class KunstmaanCookieExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $container->getDefinition(LegalCookieHelper::class)->setArgument(2, $config['cookie_lifetime']);
     }
 }
